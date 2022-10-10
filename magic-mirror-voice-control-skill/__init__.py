@@ -1,20 +1,3 @@
-# Copyright 2016 Mycroft AI, Inc.
-#
-# This file is part of Mycroft Core.
-#
-# Mycroft Core is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# Mycroft Core is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with Mycroft Core.  If not, see <http://www.gnu.org/licenses/>.
-
 from adapt.intent import IntentBuilder
 from mycroft import intent_handler
 from mycroft.skills.core import MycroftSkill
@@ -34,8 +17,6 @@ from mycroft.util.log import LOG
 from mycroft.tts import TTS
 from mycroft.client.speech.listener import RecognizerLoop
 
-__author__ = 'dmwilsonkc'
-
 LOGGER = getLogger(__name__)
 
 class MagicMirrorVoiceControlSkill(MycroftSkill):
@@ -43,28 +24,6 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
     def __init__(self):
         super(MagicMirrorVoiceControlSkill, self).__init__(name="MagicMirrorVoiceControlSkill")
 
-# This skill requires MMM-Remote-Control be installed and working properly.
-# MMM-Remote-Control requires the module identifier to know which module to
-# perform ModuleActionKeywords on (HIDE|SHOW). This code parses the MODULE_DATA returned from
-# the MMM-Remote-Control and compares it to the file "AvailableModules.json"
-# It then creates another file called file "AvailableModulesWithIdentifier.json"
-# To store the module identifier that matches the ModuleKeyword. Modules identifiers may change
-# depending on their order in the MagicMirror config.js file. Everytime you install a new module
-# the module identifiers may change. If you run into issues, restart MagicMirror and Mycroft,
-# and this code should update the changed module identifiers.
-
-# The if statements match what Mycroft hears to a module. For instance a user would say
-# weather but if MMM-WunderGround is installed it would be considered "weather".
-# These adjustments are made by changing the "mycroftname" in the file "AvailableModules.json"
-# For example: search for "weather" in the file "AvailableModules.json" and change it's
-# mycroftname to something other than weather like 'weather old'or 'current weather'.
-# Then search for MMM-Wunderground and change it's mycroftname to 'weather'.
-# The change must be to a module name that is also reflected in the ModuleKeywords.voc
-# otherwise mycroft will not recognize the name.
-
-# ///////////DO NOT CHANGE THE FILE "AvailableModulesWithIdentifier.json"//////////////////
-# The "AvailableModulesWithIdentifier.json" file is recreated everytime the skill initiates.
-# For your changes to persist all modifications should be made to the file "AvailableModules.json"
     def initialize(self):
         self.url = 'http://0.0.0.0:8080/remote'
         self.voiceurl ='http://0.0.0.0:8080/kalliope'
@@ -385,9 +344,6 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
 
     # This intent handles commands directed at specific modules. Commands include: hide
     #  show, display, conceal, install, add, turn on, turn off, update.
-    # TODO The add module needs to be changed to 'add' the recently installed module's configuration
-    # to the config.js of the MagicMirror. this is the intended functionallity. currently it is
-    # set up to be another way to say install the module.
 
     @intent_handler(IntentBuilder('ModuleActionIntent').require('ModuleActionKeywords').require('ModuleKeywords'))
     def handle_module_command(self, message):
