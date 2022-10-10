@@ -1,0 +1,129 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{16pt}
+
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+
+\usepackage[backend=bibtex,style=ieee]{biblatex}
+\addbibresource{relazione.bib}
+
+\title{Sviluppo di uno Smart Mirror ed integrazione di un AI}
+\author{Filippo Merlo}
+\date{2021-2022}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduzione}
+
+Lo sviluppo di prodotti per il mercato dell'\textit{Internet of Things} \`e in
+continua crescita ed oggetti che fino a non molto tempo fa erano completamente
+inanimati, ora sono dotati di sensori, memorie e processori per l'implementazione
+di funzionalit\'a aggiuntive. Da qui \`e nato appunto il termine \textit{Smart},
+necessario a descrivere un oggetto che ora possiede propriet\`a `intellettive`.
+L'integrazione tra tecnologia e quotidianet\`a \`e stato il perfetto mix per
+un rapido sviluppo del mondo dell'IoT, infatti la proprosta di oggetti Smart che
+rendessero semplici ed automatici i ripetitivi compiti di ogni giorno \`e stata
+ben accetta dalle persone, permettendo alla tecnologia di diventare parte integrante
+e fondamentale delle nostre vite.
+
+\subsection{Obiettivo}
+
+In una prospettiva mondiale, nella mole di proposte tecnologiche, vi sono ancora
+alcuni oggetti che resistono al `trend'dell'IoT e tra questi possiamo trovare lo
+specchio. Utilizzato molteplici volte durante il giorno da ogni tipo di persona e
+presente in varie tipologie di forme e dimensioni, \'e ormai un `must have'nella vita
+odierna e ormai viene utilizzato senza quasi rendercene conto, come fosse una nostra
+fisica estensione visiva.
+
+Una buona parte del nostro tempo viene spesa davanti ad esso, per cui l'obiettivo
+di questo progetto \'e stato quello estendere le informazioni visive fornite da uno
+specchio, attraverso la realizzazione di una sua versione Smart. Il prototipo sviluppato
+\`e stato creato concentrandosi principalmente su un suo possibile utilizzo, nello
+specifico quello all'interno delle proprie abitazioni, durante le varie ruotine
+giornaliere. Normalmente \'e presente almeno uno specchio per bagno, senza contare
+altri possibili nelle camere e guardaroba e viene utilizzato per assisterci in compiti
+come sistemarci il volto o i capelli, provare l'abbigliamento e controllare di avere un
+aspetto in ordine. Si guarda nello specchio anche mentre si svolgono altri compiti, in cui
+lo specchio non risulta fondamentale ma \'e sempre presente data la sua posizione, come
+ad esempio lavarsi le mani o i denti ed asciugarsi i capelli. La cosa che accomuna tutte
+queste azioni \'e il ruolo dello specchio, che risulta essere sempre presente ma come 
+assistente per azioni primarie, in cui abbiamo spesso le mani occupate. Dati tutti questi
+fattori risulta immediato pensare a come uno smart mirror che fornisce informazioni aggiuntive
+come l'ora, la presenza di notifiche mail o messaggi non lette, prossimi eventi del calendario,
+previsioni meteo, per arrivare anche alla presentazioni di notizie, si integri quasi perfettamente
+con un assistente digitale, controllabile con la voce, rendendo cos\`i possibile gestire
+ulteriori task comporaneamente al compito che si sta svolgendo.
+
+\section{Analisi}
+
+\subsection{Requisiti}
+
+Per il corretto sviluppo del progetto, oltre ad un normalissimo specchio, risultano necessari un computer
+ed eventuali periferiche e sensori, legati ai moduli da visualizzare sullo specchio, dove per \textit{modulo}
+si intende un servizio che viene eseguito in background dal computer e presenta sullo schermo le informazioni
+raccolte. Il formato e la quantit\`a (dettaglio) di informazioni presentate sono personalizzati in base alla
+scelta dell'utente come lo \`e la scelta dei moduli.
+
+Per il corretto funzionamento della maggior parte dei moduli risulta ovviamente necessario essere dotati di una
+connessione internet.
+
+\subsection{Architettura}
+
+L'archittetura del progetto pu\'o essere distinta tra componenti fisiche e componenti virtuali, per cui:
+
+\begin{itemize}
+  \item \textbf{fisiche}: specchio, raspberry pi, modulo wifi/cavo ethernet
+  \item \textbf{virtuali}: MagicMirror, moduli, assistente digitale
+\end{itemize}
+
+\subsubsection{Smart Mirror}
+
+Sul mercato sono gi\`a presenti prototipi pronti all'acquisto e funzionanti, tuttavia se si vuole realizzazione
+una soluzione \textit{home made} il processo risulta semplice e con un minimo di ricerca su Internet a riguardo,
+\`e possibile trovare molteplici guide, pi\`u o meno dettagliate, che forniscono soluzioni \textit{plug and play}.
+
+Per il seguente progetto si \`e scelto come base di sviluppo MagicMirror$^2$\cite{MagicMirrorRepo}, un piattaforma
+\textit{open-source} modulare per la gestione e personalizzazione completa del proprio Smart Mirror. Il core di 
+MagicMirror$^2$ contiene una forte API che permette a sviluppatori di terze parti di implementare i propri moduli
+da integrare, infatti sul sito ufficiale\cite{MagicMirrorSite} \`e presente una sezione con la lista di tutti i
+moduli sviluppati da terzi e pubblicati\cite{MagicMirrorModules}. In questo progetto i moduli utilizzati sono i seguenti:
+
+\begin{itemize}
+  \item orologio
+  \item calendario
+  \item meteo
+  \item news
+  \item pagine
+  \item indicatore di pagina
+  \item compleanni
+  \item controllo remoto
+\end{itemize}
+
+
+
+\subsubsection{Intelligenza Artificiale}
+
+
+\section{Implementazione}
+\subsection{MagicMirror$^2$}
+\subsection{Moduli}
+\subsection{Mycroft}
+
+\section{Conclusioni}
+\subsection{Considerazioni}
+\subsection{Limiti e miglioramenti}
+
+\printbibliography
+
+\end{document}
