@@ -1,0 +1,6 @@
+[submodule "MagicMirror"]
+	path = MagicMirror
+	url = https://github.com/MichMich/MagicMirror
+[submodule "mycroft-core"]
+	path = mycroft-core
+	url = https://github.com/MycroftAI/mycroft-core
