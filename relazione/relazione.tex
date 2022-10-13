@@ -69,7 +69,7 @@ di questo progetto \`e stato quello estendere le informazioni visive fornite da 
 specchio, attraverso la realizzazione di una sua versione Smart, di cui \`e possibile
 visualizzare un esempio in figura~\ref{smart-mirror-example}. Il prototipo sviluppato
 \`e stato creato concentrandosi principalmente su un suo possibile utilizzo, nello
-specifico quello all'interno delle proprie abitazioni, durante le varie ruotine
+specifico quello all'interno delle proprie abitazioni, durante le varie routine
 giornaliere. Normalmente \`e presente almeno uno specchio per bagno, senza contare
 altri possibili all'interno di camere e/o guardaroba, e viene utilizzato per assisterci in compiti
 come sistemarci il volto o i capelli, provare l'abbigliamento e controllare di avere un
@@ -98,7 +98,7 @@ si intende un servizio che viene eseguito in background dal computer e presenta 
 raccolte. Il formato e la quantit\`a (dettaglio) di informazioni presentate sono personalizzati in base alla
 scelta dell'utente come lo \`e la scelta dei moduli.
 
-Per un'esperienza completa ed il pi\`u reale possibile \`e preferibile l'utilizzo di una connessione internet,
+Per un'esperienza completa ed il pi\`u reale possibile \`e preferibile l'utilizzo di una connessione Internet,
 in quanto per il funzionamento di gran parte dei moduli essa risulta necessaria, tuttavia \`e comunque possibile
 utilizzare lo smart mirror anche completamente offline, come sar\`a possibile utilizzare anche l'assistente digitale
 completamente offline.
@@ -115,7 +115,7 @@ Per quanto riguarda l'assemblaggio fisico dei componenti per la realizzazione di
 necessario clonare ed installare questo progetto su un computer (e.g. Rapsberry Pi), che poi andr\`a collegato
 ad un monitor e quest'ultimo andr\`a posizionato dietro allo specchio che si vuole utilizzare. Per la scelta dello specchio,
 la soluzione migliore consisterebbe nell'utilizzo di un vetro specchiato bidirezionale, per permettere sia alla luce esterna
-alla luce del monitor di essere visualizzati nel maggior dettagli possibile sul vetro. Dal lato economico la seguente soluzione
+che alla luce del monitor, di essere visualizzate nel maggior dettaglio possibile sul vetro. Dal lato economico la seguente soluzione
 risulta per\`o costosa e non alla portata di tutti, pertanto \`e possibile optare all'acquisto di uno strato di pellicola
 cromata metallica in poliacrilico in grado di emulare il riflesso dello specchio. Ovviamente il dettaglio ed il risultato
 finale saranno sicuramente di qualit\`a visiva inferiore.
@@ -154,8 +154,8 @@ seguenti:
 Per rendere ancora pi\`u `intelligente' lo smart mirror che si sta progettando, una funzionalit\`a pressoch\`e
 fondamentale \`e quella di poter interagire con lo specchio e, come si \`e evidenziato durante il capitolo
 \ref{obiettivo}, l'opzione migliore risulta quella vocale, in quanto avendo le mani occupate, sporche od essendo
-distanti dallo specchio, usare il tatto e quindi realizzare una superificie touch non porta enormi benefici poich\`e
-l'interazione con lo specchio sarebbe sporadica. Va inoltre considerato che nel caso in cui lo specchio venisse posizionato
+distanti dallo specchio, usare il tatto, e quindi l'utilizzo di un pi\`u costosto schermo touch, non porta enormi benefici poich\`e
+l'interazione con lo specchio risulterebbe comunque sporadica. Va inoltre considerato che nel caso in cui lo specchio venisse posizionato
 in bagno e la superifice fosse touch potrebbero presentarsi difficolt\`a d'utilizzo dovute alla condensa e/o gli schizzi
 d'acqua. Per i seguenti motivi e per le molteplici potenzialit\`a aggiuntive si \`e optato per l'integrazione di un
 assistente digitale che lavorasse in sincrono con lo specchio, comunicando vocalmente con esso.
@@ -200,7 +200,9 @@ Per lo sviluppo del MagicMirror$^2$, \`e risultato necessario installare le dipe
   \item nodejs
   \item npm
 \end{itemize}
-e successivamente scaricare singolarmente i moduli da utilizzare all'interno della cartella \verb|modules|. Per l'attivazione
+e successivamente scaricare singolarmente i moduli da utilizzare all'interno della cartella \verb|modules|.
+
+Per l'attivazione
 di uno specifico modulo nello smart mirror \`e necessario creare una entry nella lista dei moduli presente nel file
 \verb|config.json|. Inoltre, per ogni modulo, vi \`e una lista diversa di parametri da poter configurare, di cui alcuni hanno
 gi\`a dei valori di default che non \`e necessario cambiare, mentre altri ne sono privi e vanno impostati manualmente come per esempio
@@ -255,7 +257,7 @@ Il seguente blocco di codice \`e un estratto del file \verb|config.json| relativ
 \subsection{Mycroft}\label{mycroft}
 
 Per quanto riguarda l'implementazione dell'AI Mycroft, \`e stato necessario installare il relativo
-servizio base scaricabile dalla repository ufficiale~\cite{MycroftRepo}. Per l'installatione \`e stato
+servizio base scaricabile dalla repository ufficiale~\cite{MycroftRepo}. Per l'installazione \`e stato
 utilizzato lo script \verb|dev_setup.sh|, attraverso il quale viene offerta una configurazione guidata,
 permettendo all'utente una scelta personalizzata sul pacchetto d'installazione relativamente alle proprie
 esigenze. Per esempio, tra le possibili configurazioni disponibili, viene offerta anche la possibilit\`a di 
@@ -291,13 +293,13 @@ Come parole chiave si \`e scelto:
 \end{itemize}
 per la gestione del processo del MagicMirror$^2$ in esecuzione.
 
-Per quanto concerne i moduli \`e stato creato file ausiliario \verb|AvailableModule.json| contenente la lista
+Per quanto concerne i moduli \`e stato creato file ausiliario \verb|AvailableModules.json| contenente la lista
 di tutti i moduli possibili disponibili e come parole chiave:
 \begin{itemize}
   \item \verb|turn off/hide|: per la disattivazione di un modulo visibile.
   \item \verb|turn on/show|: per l'attivazione di un modulo non visibile.
 \end{itemize}
-
+\newpage
 Inoltre sono state dichiarate delle specifiche frasi chiave extra per la gestione di moduli specifici:
 \begin{itemize}
   \item \verb|list available modules|: ritorna la lista dei moduli utilizzati.
@@ -372,18 +374,19 @@ def handle_pages_command(self, message):
         self.handle_not_connected()
 \end{MyVerbatim}
 Come visto anche nelle funzioni precedenti, all'interno di quest'ultima viene definita l'istruzione in base alle parole chiave
-del comando rilevato (la scelta di destra o sinistra), per poi essere inserita nel payload, il quale inviato allo specchio.
+del comando rilevato (la scelta di destra o sinistra), per poi essere inserita nel payload ed inviata allo specchio.
 
 Il meccanismo di base della dichiarazione delle funzioni \`e riducibile al seguente schema:
 \begin{enumerate}
-  \item Costruzione dell'istruzione, secondo le parole chiave presenti nel comando impartito e rilevato da Mycroft.
+  \item Costruzione dell'istruzione secondo le parole chiave presenti nel comando impartito e rilevato da Mycroft.
   \item Inserimento dell'istruzione nel payload.
-  \item Invio payload.
-  \item Riproduzione risposta vocale.
+  \item Invio del payload al MagicMirror.
+  \item Riproduzione della risposta vocale.
 \end{enumerate}
 mentre il funzionamento dell'assistente digitale \`e riassunto nel diagramma~\ref{diagramma-mycroft}.
 
 Infine viene presentato un video dimostrativo dello specchio in funzionamento.
+
 \begin{frame}{MagicMirror$^2$ voice control skill DEMO}
   \begin{center}
   \includemedia[
@@ -410,7 +413,7 @@ routine quotidiane ed alleggerire, anche se in minima parte, il carico di lavoro
 
 \subsection{Considerazioni finali e possibili miglioramenti}
 
-Nonostante la skill per l'interazione funzioni correttamente il progetto non risulta tuttavia pienamente
+Nonostante la skill per l'interazione funzioni correttamente, il progetto non risulta tuttavia pienamente
 completo, in quanto le possibili azioni d'interazione con lo smart mirror risultano molto limitate
 alla gestione dei moduli e della visualizzazione di essi e sono prive di comandi specifici per la
 manipolazione dei parametri dei singoli moduli.
@@ -427,6 +430,7 @@ miglioramento, che purtroppo non potr\`a mai eguagliare la mole di dati processa
 citati, in quanto spesso la loro estensiva ed estrema raccolta di dati spesso sfocia nella violazione della
 privacy dell'utente, su cui al contrario \`e invece fondata Mycroft.
 
+\newpage
 \printbibliography
 
 \end{document}
