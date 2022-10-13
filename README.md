@@ -1,7 +1,7 @@
 # Obiettivo
 
 Progetto per la realizzazione di una skill per l'AI Mycroft, per la gestione remota vocale
-di uno smart mirror MagicMirror$^2$.
+di uno smart mirror MagicMirror.
 
 E' disponbile una demo del funzionamento della skill sviluppata nel seguente [video](relazione/movies/MagicMirrorDemo.mkv).
 
@@ -17,7 +17,7 @@ cd magic-mycroft
 
 # Utilizzo
 
-Per avviare il proprio MagicMirror$^2$ e l'assistente Mycroft utilizzare il comando
+Per avviare il proprio MagicMirror e l'assistente Mycroft utilizzare il comando
 ```
 ./start.sh
 ```
