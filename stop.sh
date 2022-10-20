@@ -1,3 +1,3 @@
 #!/bin/sh
 
-./mycroft-core/stop-mycroft.sh all
+./mycroft-core/stop-mycroft.sh

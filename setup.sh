@@ -1,13 +1,15 @@
 #!/bin/sh
 
+git submodule init
+git submodule update
+
 # MagicMirror
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo pacman -Syu nodejs
-cp utils/config/config.json MagicMirror/config/
-cp -r utils/modules/ MagicMirror/modules/
-bash -c MagicMirror/modules/MMM-Remote-Control/installer.sh
 cd MagicMirror/
 npm run install-mm
+cp ../utils/config/config.json ./config/
+cp -r ../utils/modules/ ./modules/
+bash -c ./modules/MMM-Remote-Control/installer.sh
 cd ..
 
 # Mycroft
@@ -16,4 +18,4 @@ bash dev_setup.sh
 cd ..
 
 # MagiMirror-skill
-cp -r magic-mirror-voice-control-skill /opt/mycroft/skills/
+cp -r ./magic-mirror-voice-control-skill/ /opt/mycroft/skills/
