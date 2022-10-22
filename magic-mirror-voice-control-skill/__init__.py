@@ -33,14 +33,10 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
         self.kalliopeStatus = ''
         self.ipAddress = ''
         self._dir = '/opt/mycroft/skills/magic-mirror-voice-control-skill'
-
-        # Look for the ip address of the MagicMirror in the ip.json file. If for some reason the ip address is incorrect,
-        # or the MagicMirror is unreachable (not on, not properly whitelisted, or some other connectivity issue) the request.get in the
-        # following code will catch the exception and prompt the user to take action. Not sure if this can be done with an If...Then statement.
+ 
+        # In this project is used localhost as default IP address
         try:
-            with open (join(self._dir, 'ip.json')) as f:
-                ip = json.load(f)
-            ipAddress = ip['ipAddress']
+            ipAddress = '127.0.0.1'
             self.ipAddress = ipAddress
             self.url = 'http://' + ipAddress + ':8080/remote'
             self.voiceurl = 'http://' + ipAddress + ':8080/kalliope'
