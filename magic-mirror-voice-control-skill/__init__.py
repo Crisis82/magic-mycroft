@@ -158,8 +158,6 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
         except:
             self.speak('Im sorry that is not a valid ip address. please try again', expect_response=True)
 
-
-
 # This code builds the SystemActionIntent which are commands that are not directed at a specific module
 
     @intent_handler(IntentBuilder('SystemActionIntent').require('SystemActionKeywords').require('SystemKeywords'))
@@ -283,8 +281,7 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
                 System = 'PAGE_INCREMENT'
             action = 'NOTIFICATION'
             payload = {'action': action, 'notification': System}
-            r = requests.get(url=self.url, params=payload)
-            status = r.json()
+            r = requests.post(url=self.url, params=payload)
             self.speak_dialog('success')
         else:
             self.handle_not_connected()
@@ -377,8 +374,6 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
             self.speak_dialog('success')
         else:
             self.handle_not_connected()
-
-
 
     def stop(self):
         pass
