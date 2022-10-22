@@ -654,10 +654,10 @@
       "name": "MMM-kalliope"
     },
     {
-      "URL": "https://github.com/MichMich/MagicMirror/tree/master/modules/default/currentweather",
+      "URL": "https://github.com/MichMich/MagicMirror/tree/master/modules/default/weather",
       "identifier": "",
       "mycroftname": "weather",
-      "name": "Weather"
+      "name": "weather"
     },
     {
       "URL": "https://github.com/CFenner/MMM-AirQuality",
