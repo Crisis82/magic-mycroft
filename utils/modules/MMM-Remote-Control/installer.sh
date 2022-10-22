@@ -33,7 +33,7 @@ else
 fi
 
 # assume default install location
-MM_HOME=$HOME/MagicMirror
+MM_HOME=$HOME/magic-mycroft/MagicMirror
 MODULE_NAME=MMM-Remote-Control
 FORK=Jopyth
 
