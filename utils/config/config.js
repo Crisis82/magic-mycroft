@@ -53,13 +53,18 @@ let config = {
 		},
 		{
 			module: 'calendar',
-			header: 'US Holidays',
 			position: 'top_left',
 			config: {
 				calendars: [
 					{
+						name: 'us holidays',
 						symbol: 'calendar-check',
 						url: 'webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics'
+					},
+					{
+						name: 'my events',
+						symbol: 'calendar',
+						url: 'https://outlook.live.com/owa/calendar/00000000-0000-0000-0000-000000000000/bf20785b-0481-4585-830d-e1e85e2b0fdf/cid-0CC4C7403D83EFC0/calendar.ics',
 					}
 				]
 			}
