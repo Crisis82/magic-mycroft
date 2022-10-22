@@ -1,12 +1,12 @@
 
-[] italian translations
-[] dynamic module list
+[x] italian translations
+[ ] dynamic module list
 - weather
-    [] show/hide
-    [] change location
-    [] change layout (today, 3-day, week) (minimal,details)
+    [ ] show/hide
+    [ ] change location
+    [ ] change layout (today, 3-day, week) (minimal,details)
 - calendar
-    [] manage events (add, remove)
-    [] read event details
-[] add birthday entry
-[] article details
+    [ ] manage events (add, remove)
+    [ ] read event details
+[ ] add birthday entry
+[ ] article details
