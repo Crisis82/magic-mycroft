@@ -88,7 +88,7 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
 
             else:
                 self.connectionStatus = 'disconnected'
-                self.speak_dialog('not.connected')
+                self.speak_dialog('notConnected')
 
         except IOError:
             self.connectionStatus = 'disconnected'
@@ -136,7 +136,7 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
             self.speak('I was unable to connect to the magic mirror at the default ip address. To activate the magic-mirror-voice-control-skill I need to know the I P address of the magic mirror. What is the I P address of the magic mirror you would like to control with your voice?', expect_response=True)
 
         else:
-            self.speak_dialog('not.connected')
+            self.speak_dialog('notConnected')
 
 # The following intent handler is used to set the ip address of the MagicMirror by saving it to a file ip.json
 # The file is saved into the skill's directory which causes Mycroft to reload the skill. After the skill reloads
@@ -188,7 +188,7 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
                         payload = {'action': system_action}
                 if System in ('raspberry pi', 'pi'):
                     if system_action in ('turn on', 'SHOW', 'HIDE', 'save'):
-                        self.speak_dialog('incorrect_command', expect_response=True)
+                        self.speak_dialog('incorrectCommand', expect_response=True)
 
     # This part of the SystemActionIntent turns on/off the monitor
 
