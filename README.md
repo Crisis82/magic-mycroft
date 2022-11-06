@@ -25,3 +25,8 @@ mentre per terminarne l'esecuzione
 ```
 ./stop.sh
 ```
+
+# Azioni disponibili
+
+Aggiunta la possibilità di controllare il modulo del calendario attraverso la voce.
+E' possibile aggiungere eventi e rimuoverli. Una demo é [qui](relazione/movies/CalendarControlExample.mkv)
