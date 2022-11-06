@@ -1,0 +1,4 @@
+from {start_time} to {end_time}
+from {start_time} until {end_time}
+from {start_time} till {end_time}
+at {start_time}

@@ -8,7 +8,9 @@ from os.path import dirname, join
 import requests
 import ipaddress
 import json
+import datetime
 import re
+import time
 import mycroft.version
 from threading import Thread, Lock
 from mycroft.messagebus.client import MessageBusClient
@@ -16,6 +18,8 @@ from mycroft.messagebus.message import Message
 from mycroft.util.log import LOG
 from mycroft.tts import TTS
 from mycroft.client.speech.listener import RecognizerLoop
+
+from .googleCal import addEvent, defaultFormat, deleteEvent
 
 LOGGER = getLogger(__name__)
 
@@ -149,8 +153,6 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
         try:
             ipaddress.ip_address(utterance)
             ip = {'ipAddress': utterance}
-            with open (join(self._dir,'ip.json'), 'w') as f:
-                json.dump(ip, f)
         except:
             self.speak('Im sorry that is not a valid ip address. please try again', expect_response=True)
 
@@ -277,7 +279,7 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
                 System = 'PAGE_INCREMENT'
             action = 'NOTIFICATION'
             payload = {'action': action, 'notification': System}
-            r = requests.post(url=self.url, params=payload)
+            r = requests.get(url=self.url, params=payload)
             self.speak_dialog('success')
         else:
             self.handle_not_connected()
@@ -368,6 +370,79 @@ class MagicMirrorVoiceControlSkill(MycroftSkill):
             r = requests.get(url=self.url, params=payload)
             status = r.json()
             self.speak_dialog('success')
+        else:
+            self.handle_not_connected()
+
+    @intent_handler('AddEvent.intent')
+    def handle_calendar_add_event(self, message):
+        if self.connectionStatus == 'connected':      
+            title = message.data.get('title')
+            if title == None:
+                self.speak('No title specified. Action dismissed.')
+                return 0
+
+            eventDate = message.data.get('date')
+            if eventDate == 'today':
+                eventDate = datetime.datetime.today().strftime('%Y-%m-%d')
+            if eventDate == 'tomorrow':
+                today = datetime.datetime.today()
+                eventDate = today + datetime.timedelta(days=1)
+                eventDate = datetime.datetime.strftime(eventDate, '%Y-%m-%d')
+            startTime = message.data.get('start_time', '00:00').replace(' ', ':')
+            endTime = message.data.get('end_time')
+            try:
+                start = defaultFormat(eventDate + ' ' + startTime + ':00')
+                if endTime is None:
+                    end = ''
+                else:
+                    end = defaultFormat(eventDate + ' ' + endTime + ':00')
+            except ValueError:
+                self.speak('Invalid date.')
+                return 0
+
+            description = message.data.get('description')
+            if description is None:
+                response = addEvent(title, start, end)
+            else:
+                response = addEvent(title, start, end, description)
+            self.speak(response)
+            time.sleep(6)
+            # payload = {'action': 'UPDATE', 'notification': 'module_3_calendar'}
+            payload = {'action': 'REFRESH'}
+            r = requests.get(url=self.url, params=payload)
+        else:
+            self.handle_not_connected()
+
+    @intent_handler('DeleteEvent.intent')
+    def handle_calendar_delete_event(self, message):
+        if self.connectionStatus == 'connected':      
+            title = message.data.get('title')
+            if title == None:
+                self.speak('No title specified. Action dismissed.')
+                return 0
+
+            eventDate = message.data.get('date')
+            if eventDate == 'today':
+                eventDate = datetime.datetime.today().strftime('%Y-%m-%d')
+            if eventDate == 'tomorrow':
+                today = datetime.datetime.today()
+                eventDate = today + datetime.timedelta(days=1)
+                eventDate = datetime.datetime.strftime(eventDate, '%Y-%m-%d')
+            eventTime = message.data.get('time', '00:00').replace(' ', ':')
+            try:
+                if eventDate is None:
+                    eventDatetime = ''
+                else:
+                    eventDatetime = defaultFormat(eventDate + ' ' + eventTime + ':00')
+            except ValueError:
+                self.speak('Invalid date.')
+                return 0
+
+            response = deleteEvent(title, eventDatetime)
+            self.speak(response)
+            time.sleep(6)
+            payload = {'action': 'REFRESH'}
+            r = requests.get(url=self.url, params=payload)
         else:
             self.handle_not_connected()
 

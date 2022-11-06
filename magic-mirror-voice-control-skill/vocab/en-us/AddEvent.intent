@@ -1,0 +1,133 @@
+add {title} for the {date}
+add {title} for{date}
+add {title} the {date}
+add {title} for the {date} at {start_time}
+add {title} for{date} at {start_time}
+add {title} the {date} at {start_time}
+add {title} for the {date} from {start_time} to {end_time}
+add {title} for{date} from {start_time} to {end_time}
+add {title} the {date} from {start_time} to {end_time}
+
+add event {title} for the {date}
+add event {title} for the {date} at {start_time}
+add event {title} for the {date} from {start_time} to {end_time}
+add event {title} for {date}
+add event {title} for {date} at {start_time}
+add event {title} for {date} from {start_time} to {end_time}
+add event {title} the {date}
+add event {title} the {date} at {start_time}
+add event {title} the {date} from {start_time} to {end_time}
+
+add event {title} for the {date} with description {description}
+add event {title} for the {date} at {start_time} with description {description}
+add event {title} for the {date} at {start_time} to {end_time} with description {description}
+
+new event {title} for the {date}
+new event {title} for the {date} at {start_time}
+new event {title} for the {date} from {start_time} to {end_time}
+new event {title} for {date}
+new event {title} for {date} at {start_time}
+new event {title} for {date} from {start_time} to {end_time}
+new event {title} the {date}
+new event {title} the {date} at {start_time}
+new event {title} the {date} from {start_time} to {end_time}
+
+schedule event {title} for the {date}
+schedule event {title} for the {date} at {start_time}
+schedule event {title} for the {date} from {start_time} to {end_time}
+schedule event {title} for {date}
+schedule event {title} for {date} at {start_time}
+schedule event {title} for {date} from {start_time} to {end_time}
+schedule event {title} the {date}
+schedule event {title} the {date} at {start_time}
+schedule event {title} the {date} from {start_time} to {end_time}
+
+create event {title} for the {date}
+create event {title} for the {date} at {start_time}
+create event {title} for the {date} from {start_time} to {end_time}
+create event {title} for {date}
+create event {title} for {date} at {start_time}
+create event {title} for {date} from {start_time} to {end_time}
+create event {title} the {date}
+create event {title} the {date} at {start_time}
+create event {title} the {date} from {start_time} to {end_time}
+
+add appointment {title} for the {date}
+add appointment {title} for the {date} at {start_time}
+add appointment {title} for the {date} from {start_time} to {end_time}
+add appointment {title} for {date}
+add appointment {title} for {date} at {start_time}
+add appointment {title} for {date} from {start_time} to {end_time}
+add appointment {title} the {date}
+add appointment {title} the {date} at {start_time}
+add appointment {title} the {date} from {start_time} to {end_time}
+
+new appointment {title} for the {date}
+new appointment {title} for the {date} at {start_time}
+new appointment {title} for the {date} from {start_time} to {end_time}
+new appointment {title} for {date}
+new appointment {title} for {date} at {start_time}
+new appointment {title} for {date} from {start_time} to {end_time}
+new appointment {title} the {date}
+new appointment {title} the {date} at {start_time}
+new appointment {title} the {date} from {start_time} to {end_time}
+
+schedule appointment {title} for the {date}
+schedule appointment {title} for the {date} at {start_time}
+schedule appointment {title} for the {date} from {start_time} to {end_time}
+schedule appointment {title} for {date}
+schedule appointment {title} for {date} at {start_time}
+schedule appointment {title} for {date} from {start_time} to {end_time}
+schedule appointment {title} the {date}
+schedule appointment {title} the {date} at {start_time}
+schedule appointment {title} the {date} from {start_time} to {end_time}
+
+create appointment {title} for the {date}
+create appointment {title} for the {date} at {start_time}
+create appointment {title} for the {date} from {start_time} to {end_time}
+create appointment {title} for {date}
+create appointment {title} for {date} at {start_time}
+create appointment {title} for {date} from {start_time} to {end_time}
+create appointment {title} the {date}
+create appointment {title} the {date} at {start_time}
+create appointment {title} the {date} from {start_time} to {end_time}
+
+add task {title} for the {date}
+add task {title} for the {date} at {start_time}
+add task {title} for the {date} from {start_time} to {end_time}
+add task {title} for {date}
+add task {title} for {date} at {start_time}
+add task {title} for {date} from {start_time} to {end_time}
+add task {title} the {date}
+add task {title} the {date} at {start_time}
+add task {title} the {date} from {start_time} to {end_time}
+
+new task {title} for the {date}
+new task {title} for the {date} at {start_time}
+new task {title} for the {date} from {start_time} to {end_time}
+new task {title} for {date}
+new task {title} for {date} at {start_time}
+new task {title} for {date} from {start_time} to {end_time}
+new task {title} the {date}
+new task {title} the {date} at {start_time}
+new task {title} the {date} from {start_time} to {end_time}
+
+schedule task {title} for the {date}
+schedule task {title} for the {date} at {start_time}
+schedule task {title} for the {date} from {start_time} to {end_time}
+schedule task {title} for {date}
+schedule task {title} for {date} at {start_time}
+schedule task {title} for {date} from {start_time} to {end_time}
+schedule task {title} the {date}
+schedule task {title} the {date} at {start_time}
+schedule task {title} the {date} from {start_time} to {end_time}
+
+create task {title} for the {date}
+create task {title} for the {date} at {start_time}
+create task {title} for the {date} from {start_time} to {end_time}
+create task {title} for {date}
+create task {title} for {date} at {start_time}
+create task {title} for {date} from {start_time} to {end_time}
+create task {title} the {date}
+create task {title} the {date} at {start_time}
+create task {title} the {date} from {start_time} to {end_time}

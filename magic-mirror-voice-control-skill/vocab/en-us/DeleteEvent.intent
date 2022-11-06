@@ -1,0 +1,101 @@
+delete {title}
+remove {title}
+delete {title} for the {date}
+remove {title} for the {date}
+delete {title} for {date}
+remove {title} for {date}
+
+delete event {title}
+delete event {title} for the {date}
+delete event {title} for the {date} at {time}
+delete event {title} for {date}
+delete event {title} for {date} at {time}
+delete event {title} the {date}
+delete event {title} the {date} at {time}
+
+remove event {title}
+remove event {title} for the {date}
+remove event {title} for the {date} at {time}
+remove event {title} for {date}
+remove event {title} for {date} at {time}
+remove event {title} the {date}
+remove event {title} the {date} at {time}
+
+unchedule event {title}
+unschedule event {title} for the {date}
+unschedule event {title} for the {date} at {time}
+unschedule event {title} for {date}
+unschedule event {title} for {date} at {time}
+unschedule event {title} the {date}
+unschedule event {title} the {date} at {time}
+
+trash event {title}
+trash event {title} for the {date}
+trash event {title} for the {date} at {time}
+trash event {title} for {date}
+trash event {title} for {date} at {time}
+trash event {title} the {date}
+trash event {title} the {date} at {time}
+
+delete appointment {title}
+delete appointment {title} for the {date}
+delete appointment {title} for the {date} at {time}
+delete appointment {title} for {date}
+delete appointment {title} for {date} at {time}
+delete appointment {title} the {date}
+delete appointment {title} the {date} at {time}
+
+remove appointment {title}
+remove appointment {title} for the {date} at {time}
+remove appointment {title} for {date}
+remove appointment {title} for {date} at {time}
+remove appointment {title} the {date}
+remove appointment {title} the {date} at {time}
+
+unschedule appointment {title}
+unschedule appointment {title} for the {date}
+unschedule appointment {title} for the {date} at {time}
+unschedule appointment {title} for {date}
+unschedule appointment {title} for {date} at {time}
+unschedule appointment {title} the {date}
+unschedule appointment {title} the {date} at {time}
+
+trash appointment {title}
+trash appointment {title} for the {date}
+trash appointment {title} for the {date} at {time}
+trash appointment {title} for {date}
+trash appointment {title} for {date} at {time}
+trash appointment {title} the {date}
+trash appointment {title} the {date} at {time}
+
+delete task {title}
+delete task {title} for the {date}
+delete task {title} for the {date} at {time}
+delete task {title} for {date}
+delete task {title} for {date} at {time}
+delete task {title} the {date}
+delete task {title} the {date} at {time}
+
+remove task {title}
+remove task {title} for the {date}
+remove task {title} for the {date} at {time}
+remove task {title} for {date}
+remove task {title} for {date} at {time}
+remove task {title} the {date}
+remove task {title} the {date} at {time}
+
+unschedule task {title}
+unschedule task {title} for the {date}
+unschedule task {title} for the {date} at {time}
+unschedule task {title} for {date}
+unschedule task {title} for {date} at {time}
+unschedule task {title} the {date}
+unschedule task {title} the {date} at {time}
+
+trash task {title}
+trash task {title} for the {date}
+trash task {title} for the {date} at {time}
+trash task {title} for {date}
+trash task {title} for {date} at {time}
+trash task {title} the {date}
+trash task {title} the {date} at {time}
